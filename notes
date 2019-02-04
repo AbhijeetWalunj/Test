@@ -1,0 +1,63 @@
+kernel mounts file systems
+first file system mounted
+rfs contain programs and utilities to boot the system,intialize services such as networking,load device drivers and mount additional fs
+small rfs-flash,other fs on hdd or server
+file hierarchy std is directory layut std
+
+bin:
+	contains binary executables
+	commands which can be used by root as well as normal user
+	cp,mv,rm,ca,ls
+	any program can be simply executed by entering its name in the command line
+	shells is among the contents of the bin
+	busybox in case of minimal rfs
+
+dev:
+	for device nodes
+	everything is file in linux
+	block device:
+		store data,hdd
+	character devices:
+		transmit data,ports
+	new evices can be created makedev command
+
+etc:
+	configuration files
+	these files are used to ctrl operation of prgrams
+	inittab - config file for init
+	static files no binaries
+	scripts to run at startup,user data
+
+home:
+	repository for user files
+	directory user is first in after logging in
+
+lib:
+	library files required by applications for their proper execution and commands in bin and sbin
+	kernel modules
+
+sbin:
+	binary exec for only administrator
+	fdisk(for partition table)
+	grub
+	ifconfig(network config)
+
+mount:
+	mount is process of attaching another file system
+	used for temp mnt points
+	mnt point is accesible from current directory thus making mounted system subtree
+
+proc:
+	comes from processes
+	information about system
+	virtual file system
+	procfs is info abt processess
+
+boot:
+	boot processes not config files
+	data used before kernel starts installing user moe progrsms
+	backup of mbr
+	installed kernel config
+	kernel or symbolic link to kernel	
+sys:
+	provides pseudo fs for kernel object
